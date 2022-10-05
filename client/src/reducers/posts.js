@@ -1,19 +1,19 @@
 import { CREATE, UPDATE, DELETE, FEATCH_ALL, FEATCH_SEARCH } from '../constants/actionTypes';
 
-const reducer = (posts = [], action) => {
+const reducer = (state = [], action) => {
     switch (action.type) {
         case FEATCH_ALL:
-            return action.payload;
+            return { ...state, posts: action.payload.data, currentPage: action.payload.currentPage, numberOfPages: action.payload.numberOfPages };
         case FEATCH_SEARCH:
-            return action.payload;
+            return { ...state, posts: action.payload };
         case CREATE:
-            return [...posts, action.payload];
+            return [...state, action.payload];
         case UPDATE:
-            return posts.map((post) => post._id === action.payload._id ? action.payload : post);
+            return state.map((post) => post._id === action.payload._id ? action.payload : post);
         case DELETE:
-            return posts.filter((post) => post._id === action.payload._id);
+            return state.filter((post) => post._id === action.payload._id);
         default:
-            return posts;
+            return state;
     }
 }
 
