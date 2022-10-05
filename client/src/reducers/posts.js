@@ -1,8 +1,10 @@
-import { CREATE, UPDATE, DELETE, FEATCH_ALL } from '../constants/actionTypes';
+import { CREATE, UPDATE, DELETE, FEATCH_ALL, FEATCH_SEARCH } from '../constants/actionTypes';
 
 const reducer = (posts = [], action) => {
     switch (action.type) {
         case FEATCH_ALL:
+            return action.payload;
+        case FEATCH_SEARCH:
             return action.payload;
         case CREATE:
             return [...posts, action.payload];

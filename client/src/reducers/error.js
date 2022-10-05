@@ -1,9 +1,9 @@
 import { ERROR } from '../constants/actionTypes';
 
-const errorReducer = (state = { error: null }, action) => {
+const errorReducer = (state = [], action) => {
     switch (action.type) {
         case ERROR:
-            return { ...state, error: action?.payload };
+            return [...state, action.payload];
         default:
             return state;
     }

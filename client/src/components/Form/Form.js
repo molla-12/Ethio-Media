@@ -30,7 +30,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
     const clear = () => {
         setCurrentId(null);
-        setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+        setPostData({  title: '', message: '', tags: '', selectedFile: '' });
     }
 
 
@@ -38,14 +38,6 @@ const Form = ({ currentId, setCurrentId }) => {
         <Paper className={ classes.paper }>
             <form autoComplete="off" noValidate className={ `${classes.root} ${classes.form}` } onSubmit={ handleSubmit }>
                 <Typography variant="h6">{ currentId ? 'Edit' : 'Create' } Post</Typography>
-                <TextField
-                    name="creator"
-                    variant="outlined"
-                    label="Creator"
-                    fullWidth
-                    value={ postData.creator }
-                    onChange={ (e) => setPostData({ ...postData, creator: e.target.value }) }
-                />
                 <TextField
                     name="title"
                     variant="outlined"
