@@ -10,9 +10,9 @@ API.interceptors.request.use((req) => {
     return req;
 });
 
+export const getPost = (id) => API.get(`/posts/${id}`);
 export const getPosts = (page) => API.get(`/posts?page=${page}`);
 export const featchPostsBySearch = (searchQuery) => API.get(`/posts/search?searchQuery=${searchQuery.search || 'none'}&tags=${searchQuery.tags}`);
-export const feachPosts = (id) => API.get(`/posts/${id}`);
 export const createPost = (newPost) => API.post('/posts', newPost);
 export const likePost = (id) => API.patch(`/posts/${id}/likePost`);
 export const updatePost = (id, updatedPost) => API.patch(`/posts/${id}`, updatedPost);

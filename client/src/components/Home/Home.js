@@ -3,11 +3,11 @@ import { Container, Grow, Grid, Paper, AppBar, TextField, Button } from '@materi
 import { useDispatch } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
 import ChipInput from 'material-ui-chip-input';
+
 import Posts from '../Posts/Posts';
 import Form from '../Form/Form';
 import Paginate from '../Pagination';
 import { getPosts, getPostsBySearch } from '../../actions/posts';
-// import useStyles from '../../styles';
 import useStyles from './styles';
 
 function useQuery() {
@@ -49,7 +49,6 @@ const Home = () => {
 
     const handleDeleteChip = (chipToDelete) => setTags(tags.filter((tag) => tag !== chipToDelete));
 
-
     return (
         <Grow in>
             <Container maxWidth="xl">
@@ -64,9 +63,11 @@ const Home = () => {
                             <Button className={ classes.searchButton } variant="contained" color="primary" onClick={ searchPost }>Search</Button>
                         </AppBar>
                         <Form currentId={ currentId } setCurrentId={ setCurrentId } />
-                        <Paper elevation="3" className={ classes.pagination }>
-                            <Paginate page={ page } />
-                        </Paper>
+                        { (!searchQuery && !tags.length) && (
+                            <Paper elevation="3" className={ classes.pagination }>
+                                <Paginate page={ page } />
+                            </Paper>
+                        ) }
                     </Grid>
                 </Grid>
             </Container>

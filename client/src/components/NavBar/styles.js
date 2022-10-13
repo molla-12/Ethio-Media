@@ -3,8 +3,8 @@ import { deepPurple } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
   appBar: {
-    borderRadius: 15,
-    margin: '30px 0',
+    borderRadius: 10,
+    margin: '30px 0px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -27,7 +27,7 @@ export default makeStyles((theme) => ({
   toolbar: {
     display: 'flex',
     justifyContent: 'flex-end',
-    width: '400px',
+    width: '100px',
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
     },
@@ -35,7 +35,7 @@ export default makeStyles((theme) => ({
   profile: {
     display: 'flex',
     justifyContent: 'space-between',
-    width: '400px',
+    width: '100px',
     alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
@@ -44,7 +44,7 @@ export default makeStyles((theme) => ({
     },
   },
   logout: {
-    marginLeft: '20px',
+    marginLeft: '10px',
   },
   userName: {
     display: 'flex',
