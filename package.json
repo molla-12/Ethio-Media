@@ -4,8 +4,16 @@
     "description": "",
     "main": "index.js",
     "type": "module",
+    "engines": {
+        "node": "16.15.0",
+        "npm": "8.18.0"
+    },
     "scripts": {
-        "start": "node ./src/index.js"
+        "start": "node server/index.js",
+        "backend": "nodemon server/index.js",
+        "frontend": "npm run front --prefix client",
+        "dev": "concurrently \"npm run backend\"npm run start --prefix client\"",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
     },
     "keywords": [],
     "author": "",
