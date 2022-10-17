@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const postSchema = mongoose.Schema({
-    title: String,
+ title: String,
     message: String,
     name: String,
     creator: String,
@@ -11,6 +11,7 @@ const postSchema = mongoose.Schema({
         type: [String],
         default: []
     },
+     comments: { type: [String], default: [] },
     createdAt: {
         type: String,
         default: new Date()

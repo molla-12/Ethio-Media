@@ -60,7 +60,6 @@ const NaveBar = () => {
               'aria-labelledby': 'basic-button',
             } }
           >
-            <MenuItem onClick={ handleClose }>Profile</MenuItem>
             <MenuItem onClick={ handleClose }>{ user.result.name }</MenuItem>
             <MenuItem onClick={ logout }><PersonIcon fontSize="small" />Logout</MenuItem>
             <Divider />
